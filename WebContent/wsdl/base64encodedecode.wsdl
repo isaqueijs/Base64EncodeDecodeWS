@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Base64EncodeDecodeService" targetNamespace="http://soa.ufrpe.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soa.ufrpe.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://soa.ufrpe.br/" schemaLocation="base64encodedecode_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="encodeStringResponse">
+    <wsdl:part name="parameters" element="tns:encodeStringResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decodeString">
+    <wsdl:part name="parameters" element="tns:decodeString">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="encodeString">
+    <wsdl:part name="parameters" element="tns:encodeString">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decodeStringResponse">
+    <wsdl:part name="parameters" element="tns:decodeStringResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Base64EncodeDecode">
+    <wsdl:operation name="encodeString">
+      <wsdl:input name="encodeString" message="tns:encodeString">
+    </wsdl:input>
+      <wsdl:output name="encodeStringResponse" message="tns:encodeStringResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodeString">
+      <wsdl:input name="decodeString" message="tns:decodeString">
+    </wsdl:input>
+      <wsdl:output name="decodeStringResponse" message="tns:decodeStringResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Base64EncodeDecodeServiceSoapBinding" type="tns:Base64EncodeDecode">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="encodeString">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="encodeString">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="encodeStringResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodeString">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="decodeString">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="decodeStringResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Base64EncodeDecodeService">
+    <wsdl:port name="Base64EncodeDecodePort" binding="tns:Base64EncodeDecodeServiceSoapBinding">
+      <soap:address location="http://localhost:8080/Base64EncodeDecodeWS/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

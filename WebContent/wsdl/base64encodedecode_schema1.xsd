@@ -1,0 +1,35 @@
+<xs:schema xmlns:tns="http://soa.ufrpe.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://soa.ufrpe.br/" version="1.0">
+
+  <xs:element name="decodeString" type="tns:decodeString"/>
+
+  <xs:element name="decodeStringResponse" type="tns:decodeStringResponse"/>
+
+  <xs:element name="encodeString" type="tns:encodeString"/>
+
+  <xs:element name="encodeStringResponse" type="tns:encodeStringResponse"/>
+
+  <xs:complexType name="encodeString">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="encodeStringResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="decodeString">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="decodeStringResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
